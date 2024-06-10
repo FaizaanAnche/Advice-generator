@@ -9,7 +9,9 @@ function App() {
   const [advice, setAdvice] = useState("");
   const [adviceId, setAdviceId] = useState();
 
-  useEffect(() => getAdvice);
+  useEffect(() => {
+    getAdvice();
+  }, []);
 
   async function getAdvice(){
     const response = await axios.get("https://api.adviceslip.com/advice");
